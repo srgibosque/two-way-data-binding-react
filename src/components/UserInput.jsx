@@ -1,32 +1,54 @@
-function Header() {
+import { useState } from 'react';
+
+function UserInput({ onChangeInput, userInput}) {
 
   return (
     <section>
       <div>
         <p>
-          <label htmlFor="">Initial Investment</label>
-          <input type="number" required name="" id="" />
+          <label>Initial Investment</label>
+          <input
+            type="number"
+            required
+            value={userInput.initialInvestment}
+            onChange={(event) => onChangeInput('initialInvestment', event.target.value)}
+          />
         </p>
 
         <p>
-          <label htmlFor="">Annual Investment</label>
-          <input type="number" required name="" id="" />
+          <label>Annual Investment</label>
+          <input
+            type="number"
+            required
+            value={userInput.annualInvestment}
+            onChange={(event) => onChangeInput('annualInvestment', event.target.value)}
+          />
         </p>
       </div>
 
       <div>
         <p>
-          <label htmlFor="">Expected return</label>
-          <input type="number" required name="" id="" />
+          <label>Expected return</label>
+          <input
+            type="number"
+            required
+            value={userInput.expectedReturn}
+            onChange={(event) => onChangeInput('expectedReturn', event.target.value)}
+          />
         </p>
 
         <p>
-          <label htmlFor="">Duration</label>
-          <input type="number" required name="" id="" />
+          <label>Duration</label>
+          <input
+            type="number"
+            required
+            value={userInput.duration}
+            onChange={(event) => onChangeInput('duration', event.target.value)}
+          />
         </p>
       </div>
     </section>
   )
 }
 
-export default Header
+export default UserInput
